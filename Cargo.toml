@@ -1,0 +1,6 @@
+[package]
+name = "homework-3-steventhanna"
+version = "0.1.0"
+authors = ["steventhanna <steventhanna@gmail.com>"]
+
+[dependencies]
