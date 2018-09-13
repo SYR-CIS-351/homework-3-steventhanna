@@ -104,7 +104,20 @@ fn insert_sort(a : &mut [u32]) {
     }
 }
 
+// https://en.wikipedia.org/wiki/Binary_search_algorithm
 fn binary_search(x : u32, a : &[u32]) -> Option<usize> {
+    let mut l = 0;
+    let mut r = a.len() - 1;
+    while l <= r {
+        let m = (l + r) / 2;
+        if a[m] < x {
+            l = m + 1;
+        } else if a[m] > x {
+            r = m - 1;
+        } else {
+            return Some(m);
+        }
+    }
     None
 }
 
@@ -112,7 +125,19 @@ fn min_max(a : &[u32]) -> (u32,u32) {
     let len = a.len();
     assert!(len>0);
 
-    return (0,0);
+    if a.len() == 1 {
+        return (a[0], a[0]);
+    } else if a.len() == 2 {
+        return (cmp::min(a[0], a[1]), cmp::max(a[0], a[1]));
+    } else {
+        let left_half = &a[0..a.len() / 2];
+        let right_half = &a[a.len() / 2..a.len()];
+        let (left_min, left_max) = min_max(left_half);
+        let (right_min, right_max) = min_max(right_half);
+        let max = cmp::max(left_max, right_max);
+        let min = cmp::min(left_min, right_min);
+        return (min, max);
+    }
 }
 
 // NOTE:
