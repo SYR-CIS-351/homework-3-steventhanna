@@ -1,0 +1,14 @@
+initial:          [66, 70, 52, 93, 44, 67, 47, 10, 11, 13, 94, 99, 51, 12]
+bubble-sorted:    [10, 11, 12, 13, 44, 47, 51, 52, 66, 67, 70, 93, 94, 99]
+selection-sorted: [10, 11, 12, 13, 44, 47, 51, 52, 66, 67, 70, 93, 94, 99]
+insertion-sorted: [10, 11, 12, 13, 44, 47, 51, 52, 66, 67, 70, 93, 94, 99]
+
+unordered search:
+	 44 found at index 4
+	 43 not found
+
+binary search:
+	 44 found at index 4
+	 43 not found
+
+the min and max of initial are (10, 99)
